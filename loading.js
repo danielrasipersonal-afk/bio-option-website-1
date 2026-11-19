@@ -41,7 +41,7 @@ hero.addEventListener('click', event => {
   const clickedLink = contactLink.contains(event.target);
   const clickedCursor = !contactCursor.hidden && event.detail === 1 &&
     (!event.pointerType || event.pointerType === 'mouse') &&
-    !event.target.closest(interactiveElements) && window.getSelection()?.isCollapsed !== false;
+    !event.target.closest(`${interactiveElements}, .star-decoration`) && window.getSelection()?.isCollapsed !== false;
   if (!clickedLink && !clickedCursor) return;
   if (clickedLink && reduceMotion.matches) return;
 

@@ -114,18 +114,21 @@ body, h1, p, ul { margin: 0; }
   background: #8b8b8b;
 }
 .contact-link {
-  flex: 0 0 auto;
+  position: absolute;
+  right: max(var(--gutter), 3.84vw);
   display: grid;
   place-items: center;
-  min-width: 44px;
+  width: 7rem;
   min-height: 44px;
-  margin: -10px;
   text-decoration: none;
-  border-radius: 50%;
+  border-radius: 999px;
+  clip-path: inset(50%);
 }
-.contact-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+.contact-link:focus-visible { clip-path: none; outline: 2px solid var(--blue); outline-offset: 4px; }
+.contact-link:focus-visible + .star-decoration { visibility: hidden; }
 .contact-link:hover { cursor: pointer; }
-.contact-label { display: none; }
+.contact-label { display: block; width: 100%; height: auto; }
+.star-decoration { display: grid; place-items: center; min-width: 44px; min-height: 44px; margin: -10px; }
 .asterisk {
   color: var(--blue);
   font-size: clamp(2.1rem, 3.34vw, 4.2rem);
@@ -252,7 +255,8 @@ body, h1, p, ul { margin: 0; }
   user-select: none;
 }
 
-@supports (backdrop-filter: invert(1)) or (-webkit-backdrop-filter: invert(1)) {
+@supports ((backdrop-filter: invert(1)) and (mask-image: url("assets/contact-cursor.png"))) or
+          ((-webkit-backdrop-filter: invert(1)) and (-webkit-mask-image: url("assets/contact-cursor.png"))) {
   .contact-cursor {
     /* Separate blue from the light backdrop, then map the two tones to blue and white. */
     --cursor-contrast: invert(1) grayscale(1) brightness(.8) contrast(14)
@@ -428,18 +432,18 @@ body, h1, p, ul { margin: 0; }
     margin: 0;
   }
   .callout { display: contents; }
-  .curiosity, .contact-link .asterisk { display: none; }
+  .curiosity, .star-decoration { display: none; }
   .contact-link {
     position: fixed;
     z-index: 1;
     top: var(--mobile-contact-top);
+    right: auto;
     left: max(var(--mobile-brand-inset), calc(env(safe-area-inset-left) + .5rem));
     min-height: 44px;
     width: var(--mobile-contact-width);
     margin: 0;
-    border-radius: 999px;
+    clip-path: none;
   }
-  .contact-label { display: block; width: 100%; height: auto; }
   .identity {
     grid-area: 2 / 1;
     align-self: start;
