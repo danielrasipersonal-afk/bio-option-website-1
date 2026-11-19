@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0029cc">
+  <meta name="description" content="Bio Option Oy explores scientific knowledge and biotechnology-related opportunities.">
+  <title>Bio Option Oy</title>
+  <link rel="preload" href="assets/syne.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/inter.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/contact-cursor.png" as="image" media="(any-hover: hover) and (any-pointer: fine)">
+  <link rel="stylesheet" href="styles.css">
+  <script src="loading.js" defer></script>
+</head>
+<body>
+  <main class="hero">
+    <span class="rule rule--primary" aria-hidden="true"></span>
+    <span class="rule rule--secondary" aria-hidden="true"></span>
+
+    <img class="hero-logo" src="assets/logo.png" width="368" height="456" alt="">
+    <header class="identity">
+      <strong>Bio Option Oy</strong>
+      <span class="identity-divider" aria-hidden="true"></span>
+      <span class="industry">medications, bio technology</span>
+    </header>
+    <p class="purpose">for better future<br>through biotech</p>
+    <p class="description">Exploring scientific knowledge and biotechnology-related opportunities.</p>
+    <ul class="values" aria-label="Values">
+      <li>01 — Curiosity</li>
+      <li>02 — Clarity</li>
+    </ul>
+    <div class="callout">
+      <p class="curiosity">Stay curious.</p>
+      <a class="contact-link" href="mailto:info@biooption.com?subject=Inquiry%20for%20Bio%20Option&amp;body=Hello%20Bio%20Option%20team%2C%0D%0A%0D%0AI%E2%80%99m%20reaching%20out%20about%20%5Btopic%5D.%0D%0A%0D%0A%5BTell%20us%20a%20little%20about%20your%20inquiry.%5D%0D%0A%0D%0ABest%20regards%2C%0D%0A%5BYour%20name%5D" aria-label="Contact Bio Option by email">
+        <span class="asterisk" aria-hidden="true">*</span>
+      </a>
+    </div>
+    <div class="headline-panel">
+      <h1 class="headline"><span>Independent</span> <span>by nature</span></h1>
+      <span class="index" aria-hidden="true">01</span>
+    </div>
+  </main>
+
+  <svg class="cursor-filters" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="contact-contrast" color-interpolation-filters="sRGB">
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="-8" intercept="1"/>
+      </feComponentTransfer>
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        .839216 0 0 0 .160784
+        .2 0 0 0 .8
+        0 0 0 1 0"/>
+    </filter>
+  </svg>
+  <span class="contact-cursor" aria-hidden="true" hidden></span>
+
+  <div class="loader" hidden aria-hidden="true">
+    <div class="loading-mark">
+      <img class="loading-logo" src="assets/logo.png" width="368" height="456" alt="">
+    </div>
+    <div class="loading-footer">
+      <div class="loading-status">
+        <span class="loading-count">00</span>
+        <span class="loading-divider"></span>
+        <span>loading your experience...</span>
+      </div>
+      <div class="loading-signature">
+        <strong>Precision You Can Trust.</strong>
+        <span>— &nbsp;Bio Option <sup>®</sup></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
