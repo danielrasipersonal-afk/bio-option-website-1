@@ -238,7 +238,6 @@ body, h1, p, ul { margin: 0; }
 
 .hero.has-contact-cursor,
 .hero.has-contact-cursor * { cursor: none; }
-.cursor-filters { position: absolute; pointer-events: none; }
 .contact-cursor {
   --cursor-width: clamp(7rem, 10.5vw, 10rem);
   position: fixed;
@@ -253,10 +252,15 @@ body, h1, p, ul { margin: 0; }
   user-select: none;
 }
 
-@supports (backdrop-filter: url("#contact-contrast")) {
+@supports (backdrop-filter: invert(1)) or (-webkit-backdrop-filter: invert(1)) {
   .contact-cursor {
+    /* Separate blue from the light backdrop, then map the two tones to blue and white. */
+    --cursor-contrast: invert(1) grayscale(1) brightness(.8) contrast(14)
+      invert(.11332) sepia(1) saturate(19.75575) hue-rotate(221.4274deg) brightness(1.49972) contrast(1.36532);
     background: none;
-    backdrop-filter: var(--contact-contrast);
+    -webkit-backdrop-filter: var(--cursor-contrast);
+    backdrop-filter: var(--cursor-contrast);
+    -webkit-mask: url("assets/contact-cursor.png") center / contain no-repeat;
     mask: url("assets/contact-cursor.png") center / contain no-repeat;
   }
 }
